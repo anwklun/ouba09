@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>请使用浏览器打开</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="false" name="twcClient" id="twcClient"/>
+    <meta name="aplus-touch" content="1"/>
+    <style>
+ body,html{width:100%;height:100%}
+        *{margin:0;padding:0}
+        body{background-color:#fff}
+        #browser img{
+            width:50px;
+        }
+        #browser{
+            margin: 0px 10px;
+            text-align:center;
+        }
+        #contens{
+            font-weight: bold;
+            color: #2466f4;
+            margin:-285px 0px 10px;
+            text-align:center;
+            font-size:20px;
+            margin-bottom: 125px;
+        }
+.top-bar-guidance{font-size:15px;color:#fff;height:70%;line-height:1.8;padding-left:20px;padding-top:20px;background:url(//img.alicdn.com/imgextra/i1/1058648503/O1CN01xKxBZn2CgQYQMLgFH_!!1058648503.png) center top/contain no-repeat}
+.top-bar-guidance .icon-safari{width:25px;height:25px;vertical-align:middle;margin:0 .2em}
+.app-download-tip{margin:0 auto;width:290px;text-align:center;font-size:15px;color:#2466f4;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAcAQMAAACak0ePAAAABlBMVEUAAAAdYfh+GakkAAAAAXRSTlMAQObYZgAAAA5JREFUCNdjwA8acEkAAAy4AIE4hQq/AAAAAElFTkSuQmCC) left center/auto 15px repeat-x}
+.app-download-tip .guidance-desc{background-color:#fff;padding:0 5px}
+.app-download-btn{display:block;width:214px;height:40px;line-height:40px;margin:18px auto 0 auto;text-align:center;font-size:18px;color:#2466f4;border-radius:20px;border:.5px #2466f4 solid;text-decoration:none}
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false">
+<div class="top-bar-guidance">
+    <p>请点击右上角 <font size="1" style="top:-2px;position:relative;">●●●</font> 按钮<br>
+	<span id="openm">选择在默认浏览器中<img src="https://img.alicdn.com/imgextra/i1/1058648503/O1CN0182F2Ya2CgQYM9luTa_!!1058648503.png" class="icon-safari">打开</span></p>
+</div>
+<a style="display: none;" href="//w.lzfhb.cn/_0Py9rr" id="vurl" rel="noreferrer"></a>
+<img src="//img.alicdn.com/imgextra/i3/1058648503/O1CN01SRo8M72CgQYM9bu6U_!!1058648503.png" style="position:absolute;top:7px;width:100%;"><br><br>
+
+<a style="display: none;" href="" id="vurl" rel="noreferrer"></a>
+
+<script src="https://lib.baomitu.com/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+       //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+    var zid = getUrlParam('zid');
+  </script>
+  <script>
+    const url = document.location.toString();
+    const urlParmStr = url.slice(url.indexOf('=') + 1);
+    if (is_weixn_qq()) {
+      document.getElementById("tips").innerHTML = "请在浏览器打开本页面";
+    } else {
+      // 不是微信客户端，直接可以访问链接
+      if(zid>=1){  location.href = "https://wk.ppabwkip.top/wk/zidtz/?zid="+zid;}else{
+       location.href = "https://wk.ppabwkip.top/wk/"
+      }
+    
+    }
+    // 判断QQUA的代码无需修改
+    function is_weixn_qq() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        return "weixin";
+      } else if (ua.match(/QQ/i) == "qq") {
+        return "QQ";
+      }
+      return false;
+    }
+  </script>
+  
+</body>
+</html>
